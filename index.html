@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+  <link href="assets/reset-style.css" rel="stylesheet">
+  <link href="assets/main.css" rel="stylesheet">
+  <link href="./bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet"/>
+	<link href="./bower_components/bootstrap/dist/css/bootstrap-theme.css"  rel="stylesheet"/>
+
+
+
+  <script type="text/javascript" src="./bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="./bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="./bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script type="text/javascript" src="./modules/app.js"></script>
+  <script type="text/javascript" src="./modules/header/header.controller.js"></script>
+
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body data-ng-app="app" >
+
+  <header data-ng-include="'./modules/header/header.view.html'" class="top-header" id="header"></header>
+
+  <section class="container" data-ng-controller="mainController">
+
+  <div class="text-center">
+    <p>Example of Angular and the normal Bootstrap JavaScript components</p>
+    <p class="text-success">This will work</p>
+  </div>
+
+  <h2>Buttons</h2>
+  <div class="btn-group" data-toggle="buttons">
+    <label class="btn btn-primary" data-ng-model="bigData.breakfast" btn-checkbox>
+      Breakfast
+    </label>
+    <label class="btn btn-primary" data-ng-model="bigData.lunch" btn-checkbox>
+      Lunch
+    </label>
+    <label class="btn btn-primary" data-ng-model="bigData.dinner" btn-checkbox>
+      Dinner
+    </label>
+  </div>
+
+  <pre><code>{{ bigData | json }}</code></pre>
+
+  <h2>Collapse</h2>
+
+  <a href="#" class="btn btn-primary" ng-click="isCollapsed = !isCollapsed">
+    Toggle Panel
+  </a>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a href="#" ng-click="isCollapsed = !isCollapsed">
+          Collapsible Group Item #1
+        </a>
+      </h4>
+    </div>
+    <div collapse="isCollapsed">
+      <div class="panel-body">Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+
+  <pre><code>{{ isCollapsed }}</code></pre>
+
+</section>
+
+</body>
+</html>
